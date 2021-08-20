@@ -8,8 +8,14 @@ skill_extractor = load_skill_extractor()
 
 st.title('SkillNer - Demo')
 st.markdown('## Enter a job posting text :')
+default_text = '''
+You are a Python Developer with a solid experience in Web development and  esx
+and have a thoughtful expatriation and manage project . You're passionate and powerful.
+You are recognized for your ability to evolve within a team and around common projects
+and you easily adapt in a new environment. javascript and node and french and english
+'''
 user_input = st.text_area(
-    "Text to annotate", 'We need an expert in esport management. Fluency in both english and french is mandatory!')
+    "Text to annotate", default_text, height=200)
 
 annotations = skill_extractor.annotate(user_input)
 # print(annotations)

@@ -9,7 +9,7 @@ def grouper(iterable):
     prev = None
     group = []
     for item in iterable:
-        if not prev or item - prev <= 15:
+        if not prev or item - prev <= 1:
             group.append(item)
         else:
             yield group
@@ -60,7 +60,9 @@ def create_ann_list(text, results):
         span = ' '.join([text_tokens[i] for i in v])
         annots[v[0]] = span
         # annotation(token,color="#fff", background="transparent",)
-
+    print(dict_)
+    print('-----')
+    # print(collections.OrderedDict(sorted(annots.items())))
     annots_ = collections.OrderedDict(sorted(annots.items())).values()
     return annots_
 
