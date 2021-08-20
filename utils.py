@@ -3,6 +3,7 @@ from annotated_text import annotation
 import collections
 from skillNer.general_params import SKILL_DB
 import pandas as pd
+import os
 
 
 def grouper(iterable):
@@ -29,7 +30,11 @@ def load_skill_extractor():
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
-    nlp = spacy.load("en_core_web_lg")
+    try:
+        nlp = spacy.load("en_core_web_lg")
+    except:
+        os.system("python -m spacy download en_core_web_lg")
+        nlp = spacy.load("en_core_web_lg")
     stop_words = set(stopwords.words('english'))
     print('load matcher')
     # init skill extractor
