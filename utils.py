@@ -23,23 +23,14 @@ def grouper(iterable):
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def load_skill_extractor():
     # This function will only be run the first time it's called
-    import spacy
+
     from skillNer.skill_extractor_class import SkillExtractor
 
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
-    try:
-        import en_core_web_lg
-        nlp = en_core_web_lg.load()
-    except:
-
-        #os.system('pip install -U spacy')
-        os.system(
-            "pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.1.0/en_core_web_lg-3.1.0.tar.gz")
-
-        import en_core_web_lg
-        nlp = en_core_web_lg.load()
+    import spacy
+    nlp = spacy.load('en_core_web_lg')
 
     print('load matcher')
     # init skill extractor
