@@ -32,7 +32,7 @@ def load_skill_extractor():
     try:
         nlp = spacy.load("en_core_web_lg")
     except:
-        os.system('echo install ....')
+        os.system('ls')
         os.system("python -m spacy download en_core_web_lg")
         nlp = spacy.load("en_core_web_lg")
 
