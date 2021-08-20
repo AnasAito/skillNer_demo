@@ -35,7 +35,8 @@ def load_skill_extractor():
 
         os.system('pip install -U spacy')
         os.system(
-            "pip3 install https://github.com/explosion/spacy-models/releases/tag/en_core_web_lg-3.1.0")
+            "pip3 install https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.1.0/en_core_web_lg-3.1.0.tar.gz")
+
         import en_core_web_lg
         nlp = en_core_web_lg.load()
 
