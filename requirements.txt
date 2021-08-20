@@ -1,4 +1,4 @@
-spacy==3.0.7
+spacy==3.1.0
 requests==2.24.0
 st_annotated_text==2.0.0
 pandas==1.0.5
