@@ -35,6 +35,7 @@ def load_skill_extractor():
 
         os.system('pip install -U spacy')
         os.system("python -m spacy download en_core_web_lg")
+        os.system('ls')
         nlp = spacy.load("en_core_web_lg")
 
     print('load matcher')
