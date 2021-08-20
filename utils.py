@@ -34,9 +34,10 @@ def load_skill_extractor():
     except:
 
         os.system('pip install -U spacy')
-        os.system("python -m spacy download en_core_web_lg")
-        os.system('ls')
-        nlp = spacy.load("en_core_web_lg")
+        os.system(
+            "pip3 install https://github.com/explosion/spacy-models/releases/tag/en_core_web_lg-3.1.0")
+        import en_core_web_lg
+        nlp = en_core_web_lg.load()
 
     print('load matcher')
     # init skill extractor
