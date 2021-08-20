@@ -1,7 +1,8 @@
-spacy==3.1.0
+spacy>=3.1.0,<3.2.0
 requests==2.24.0
 st_annotated_text==2.0.0
 pandas==1.0.5
 streamlit==0.87.0
 numpy==1.18.5
 nltk==3.5
+https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.1.0/en_core_web_lg-3.1.0.tar.gz
