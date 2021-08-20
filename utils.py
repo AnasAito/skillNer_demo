@@ -25,8 +25,12 @@ def load_skill_extractor():
     # This function will only be run the first time it's called
     import spacy
     from skillNer.skill_extractor_class import SkillExtractor
-
-    from nltk.corpus import stopwords
+    try:
+        from nltk.corpus import stopwords
+    except:
+        import nltk
+        nltk.download('stopwords')
+        from nltk.corpus import stopwords
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
@@ -35,6 +39,7 @@ def load_skill_extractor():
     except:
         os.system("python -m spacy download en_core_web_lg")
         nlp = spacy.load("en_core_web_lg")
+
     stop_words = set(stopwords.words('english'))
     print('load matcher')
     # init skill extractor
