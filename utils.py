@@ -35,6 +35,8 @@ def load_skill_extractor():
         pip_cmd = 'pip install ' + 'git+https://' + \
             token+'@github.com/AnasAito/SkillNER.git'
         os.system(pip_cmd)
+        from skillNer.skill_extractor_class import SkillExtractor
+        from skillNer.general_params import SKILL_DB
 
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
@@ -56,6 +58,7 @@ def create_ann_list(text, results):
         pip_cmd = 'pip install ' + 'git+https://' + \
             token+'@github.com/AnasAito/SkillNER.git'
         os.system(pip_cmd)
+        from skillNer.general_params import SKILL_DB
 
     type_to_color = {'Hard Skill': "#faa", 'Soft Skill': '#afa'}
     text_tokens = text.split(' ')
@@ -94,6 +97,8 @@ def create_dfs(results):
         pip_cmd = 'pip install ' + 'git+https://' + \
             token+'@github.com/AnasAito/SkillNER.git'
         os.system(pip_cmd)
+        from skillNer.general_params import SKILL_DB
+
     f_matches = results['full_matches']
     f_arr = []
     for match in f_matches:
