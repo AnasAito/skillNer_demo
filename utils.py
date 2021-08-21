@@ -1,3 +1,5 @@
+import sys
+import subprocess
 import streamlit as st
 from annotated_text import annotation
 import collections
@@ -23,6 +25,10 @@ def grouper(iterable):
 token = st.secrets['skillner_token']
 
 
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def load_skill_extractor():
     # This function will only be run the first time it's called
@@ -32,9 +38,8 @@ def load_skill_extractor():
         from skillNer.general_params import SKILL_DB
     except:
 
-        pip_cmd = 'pip install ' + 'git+https://' + \
-            token+'@github.com/AnasAito/SkillNER.git'
-        os.system(pip_cmd)
+        package = 'git+https://' + token+'@github.com/AnasAito/SkillNER.git'
+        install(package)
         from skillNer.skill_extractor_class import SkillExtractor
         from skillNer.general_params import SKILL_DB
 
