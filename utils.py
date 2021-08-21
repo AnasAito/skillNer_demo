@@ -4,7 +4,7 @@ import collections
 
 import pandas as pd
 import os
-
+from skillNer.general_params import SKILL_DB
 
 def grouper(iterable):
     prev = None
@@ -25,7 +25,7 @@ def load_skill_extractor():
     # This function will only be run the first time it's called
     import spacy
     from skillNer.skill_extractor_class import SkillExtractor
-    from skillNer.general_params import SKILL_DB
+   
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
@@ -34,7 +34,7 @@ def load_skill_extractor():
 
     print('load matcher')
     # init skill extractor
-    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher,)
+    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher,('test'))
     return skill_extractor
 
 
