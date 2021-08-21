@@ -5,5 +5,4 @@ pandas==1.0.5
 streamlit==0.87.0
 numpy==1.18.5
 nltk==3.5
-git+https://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@github.com/AnasAito/SkillNER.git
 https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.1.0/en_core_web_lg-3.1.0.tar.gz
