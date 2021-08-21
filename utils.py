@@ -37,7 +37,7 @@ def load_skill_extractor():
         from skillNer.skill_extractor_class import SkillExtractor
         from skillNer.general_params import SKILL_DB
     except:
-
+        os.system('cd')
         package = 'git+https://' + token+'@github.com/AnasAito/SkillNER.git'
         install(package)
         from skillNer.skill_extractor_class import SkillExtractor
