@@ -20,6 +20,9 @@ def grouper(iterable):
         yield group
 
 
+token = st.secrets['skillner_token']
+
+
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def load_skill_extractor():
     # This function will only be run the first time it's called
@@ -28,7 +31,7 @@ def load_skill_extractor():
         from skillNer.skill_extractor_class import SkillExtractor
         from skillNer.general_params import SKILL_DB
     except:
-        token = st.secrets['skillner_token']
+
         pip_cmd = 'pip install ' + 'git+https://' + \
             token+'@github.com/AnasAito/SkillNER.git'
         os.system(pip_cmd)
