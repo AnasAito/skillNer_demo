@@ -4,7 +4,7 @@ import collections
 
 import pandas as pd
 import os
-from skillNer.general_params import SKILL_DB
+
 
 def grouper(iterable):
     prev = None
@@ -24,8 +24,15 @@ def grouper(iterable):
 def load_skill_extractor():
     # This function will only be run the first time it's called
     import spacy
-    from skillNer.skill_extractor_class import SkillExtractor
-   
+    try:
+        from skillNer.skill_extractor_class import SkillExtractor
+        from skillNer.general_params import SKILL_DB
+    except:
+        token = st.secrets['skillner_token']
+        pip_cmd = 'pip install ' + 'git+https://' + \
+            token+'@github.com/AnasAito/SkillNER.git'
+        os.system(pip_cmd)
+
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
@@ -34,11 +41,19 @@ def load_skill_extractor():
 
     print('load matcher')
     # init skill extractor
-    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher,('test'))
+    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher, ('test'))
     return skill_extractor
 
 
 def create_ann_list(text, results):
+    try:
+        from skillNer.general_params import SKILL_DB
+    except:
+        token = st.secrets['skillner_token']
+        pip_cmd = 'pip install ' + 'git+https://' + \
+            token+'@github.com/AnasAito/SkillNER.git'
+        os.system(pip_cmd)
+
     type_to_color = {'Hard Skill': "#faa", 'Soft Skill': '#afa'}
     text_tokens = text.split(' ')
     annots = {}
@@ -69,6 +84,13 @@ def create_ann_list(text, results):
 
 
 def create_dfs(results):
+    try:
+        from skillNer.general_params import SKILL_DB
+    except:
+        token = st.secrets['skillner_token']
+        pip_cmd = 'pip install ' + 'git+https://' + \
+            token+'@github.com/AnasAito/SkillNER.git'
+        os.system(pip_cmd)
     f_matches = results['full_matches']
     f_arr = []
     for match in f_matches:
