@@ -1,7 +1,7 @@
 import streamlit as st
 from annotated_text import annotation
 import collections
-from skillNer.general_params import SKILL_DB
+
 import pandas as pd
 import os
 
@@ -25,7 +25,7 @@ def load_skill_extractor():
     # This function will only be run the first time it's called
     import spacy
     from skillNer.skill_extractor_class import SkillExtractor
-
+    from skillNer.general_params import SKILL_DB
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor
     print('load model')
