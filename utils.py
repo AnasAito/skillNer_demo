@@ -51,7 +51,7 @@ def load_skill_extractor():
 
     print('load matcher')
     # init skill extractor
-    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher, ('test'))
+    skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher,)
     return skill_extractor
 
 
