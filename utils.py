@@ -65,7 +65,8 @@ def create_ann_list(text, results):
         os.system(pip_cmd)
         from skillNer.general_params import SKILL_DB
 
-    type_to_color = {'Hard Skill': "#faa", 'Soft Skill': '#afa'}
+    type_to_color = {'Hard Skill': "#faa",
+                     'Soft Skill': '#afa', 'Certification': '#ff4'}
     text_tokens = text.split(' ')
     annots = {}
     all_res = results['ngram_scored']+results['full_matches']
