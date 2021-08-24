@@ -21,7 +21,7 @@ annotations = skill_extractor.annotate(user_input)
 # print(annotations)
 text = annotations['text']
 annotations = annotations['results']
-
+print('text', user_input.splitlines())
 annotations_render = create_ann_list(text, annotations)
 
 
