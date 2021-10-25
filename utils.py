@@ -33,15 +33,9 @@ def install(package):
 def load_skill_extractor():
     # This function will only be run the first time it's called
     import spacy
-    try:
-        from skillNer.skill_extractor_class import SkillExtractor
-        from skillNer.general_params import SKILL_DB
-    except:
-        os.system('cd')
-        package = 'git+https://' + token+'@github.com/AnasAito/SkillNER.git'
-        install(package)
-        from skillNer.skill_extractor_class import SkillExtractor
-        from skillNer.general_params import SKILL_DB
+
+    from skillNer.skill_extractor_class import SkillExtractor
+    from skillNer.general_params import SKILL_DB
 
     from spacy.matcher import PhraseMatcher
     # init params of skill extractor

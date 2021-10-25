@@ -1,4 +1,5 @@
 spacy>=3.1.0,<3.2.0
+SkillNer==1.0.2
 requests==2.24.0
 st_annotated_text==2.0.0
 pandas==1.0.5
