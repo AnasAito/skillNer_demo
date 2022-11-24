@@ -22,7 +22,7 @@ def grouper(iterable):
         yield group
 
 
-token = st.secrets['skillner_token']
+
 
 
 def install(package):
