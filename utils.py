@@ -53,10 +53,8 @@ def create_ann_list(text, results):
     try:
         from skillNer.general_params import SKILL_DB
     except:
-        token = st.secrets['skillner_token']
-        pip_cmd = 'pip install ' + 'git+https://' + \
-            token+'@github.com/AnasAito/SkillNER.git'
-        os.system(pip_cmd)
+        # install skillner if not done yet
+        os.system('pip install skillner')
         from skillNer.general_params import SKILL_DB
 
     type_to_color = {'Hard Skill': "#faa",
@@ -93,10 +91,8 @@ def create_dfs(results):
     try:
         from skillNer.general_params import SKILL_DB
     except:
-        token = st.secrets['skillner_token']
-        pip_cmd = 'pip install ' + 'git+https://' + \
-            token+'@github.com/AnasAito/SkillNER.git'
-        os.system(pip_cmd)
+        # install skillner if not done yet
+        os.system('pip install skillner')
         from skillNer.general_params import SKILL_DB
 
     f_matches = results['full_matches']
